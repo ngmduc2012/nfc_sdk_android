@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Ứng Dụng Đọc Thẻ CCCD</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mrz_scanner_guide">Xoay mặt sau của căn cước công dân để quét mã MRZ</string>
+    <string name="scan_mrz">Quét Mrz</string>
+    <string name="scan_qr_code">Quét Mã QR</string>
+    <string name="scan_next">Tiếp Theo</string>
+    <string name="btn_ok">OK</string>
+
+
+    <string name="label_personal_name">Họ Và Tên</string>
+    <string name="label_document_expiry">Expiration Date</string>
+    <string name="label_document_issued">Issuing Date</string>
+    <string name="label_document_issuing_state">Issuing State</string>
+    <string name="label_document_nationality">Nationality</string>
+    <string name="label_passport">Thông Tin Chủ CCCD</string>
+    <string name="label_not_available">NA</string>
+
+    <string name="label_additional_information_CCCD_Number">Số CCCD</string>
+    <string name="label_additional_information_dob">Ngày Sinh</string>
+    <string name="label_additional_information_sex">Giới Tính</string>
+    <string name="label_additional_information_nationality">Quốc Tịch</string>
+    <string name="label_additional_information_nation">Dân Tộc</string>
+    <string name="label_additional_information_religion">Tôn Giáo</string>
+    <string name="label_additional_information_district">Quê Quán</string>
+    <string name="label_additional_information_permanent_address">Trú quán</string>
+    <string name="label_additional_information_identifying_characteristics">Đặc Điểm</string>
+    <string name="label_additional_information_dateRange">Ngày Cấp</string>
+    <string name="label_additional_information_date_expiration">Ngày Hết Hạn</string>
+    <string name="label_additional_information_father_name">Họ Tên Bố</string>
+    <string name="label_additional_information_mother_name">Họ Tên Mẹ</string>
+    <string name="label_additional_information_husband_an_wife_name">Tên Vợ/Chồng</string>
+    <string name="label_additional_information_CMND_number">Số CMND</string>
+
+    <string name="extended_fab_content_desc">read id card</string>
+    <string name="extended_fab_label">Đọc Thẻ</string>
+
+    <string name="nfc_title">Đặt điện thoại lên Thẻ của bạn và không di chuyển nó</string>
+    <string name="driver_not_support_nfc">Thiết bị không hỗ trợ NFC</string>
+    <string name="driver_turn_of_nfc">Thiết bị đang không bật NFC</string>
+
+    <string name="status_access_chip">Đang truy nhập chip...</string>
+    <string name="status_read_personal_data">Đang đọc dữ liệu ICAO...</string>
+    <string name="status_read_photo">Đang đọc dữ liệu ảnh chân dung...</string>
+    <string name="status_read_option_data">Đang đọc dữ liệu cá nhân...</string>
+    <string name="status_verification">Đang xác thực căn cước...</string>
+
+    <string name="status_check_feature">Đang kiểm tra các tính năng</string>
+    <string name="status_check_mrz_pass">Thông tin mã MRZ không Hợp lệ</string>
+    <string name="status_error_connect">Kết nối bị lỗi</string>
+    <string name="status_error_mrz_info">Mã MRZ không hợp lệ</string>
+    <string name="status_error_chip_authentication">Lỗi xác thực chip</string>
+    <string name="status_error_license">Hết hạn bản quyền</string>
+    <string name="status_error_can_number">Mã CAN không hợp lệ</string>
+    <string name="status_error_unknown">Lỗi không xác định</string>
+    <string name="status_error_user_input_key">Thông tin truy nhập chip không hợp lệ</string>
+    <string name="status_error_read_personal_image">Lỗi đọc dữ liệu Xin thử lại!</string>
+    <string name="status_error_create_certification">Lỗi không đọc được cert từ file!</string>
+    <string name="status_error_bac">Lỗi truy nhập bằng BAC!</string>
+    <string name="status_error_pace">Lỗi truy nhập bằng PACE!</string>
+    <string name="status_error_card_access">Lỗi không đọc được thẻ!</string>
+    <string name="status_error_pass_access">Lỗi Sai pass vui lòng thử lại!</string>
+
+    <string name="header_read_card">Đặt điện thoại phía trên Thẻ, và không dịch chuyển thẻ hoặc điện thoại</string>
+    <string name="header_reading_card">Đang đọc dữ liệu, không dịch chuyển thẻ hoặc điện thoại</string>
+
+    <string name="document_chip_content_success">Dữ liệu và chip hợp lệ</string>
+    <string name="document_chip_failure">Dữ liệu và chip không hợp lệ</string>
+    <string name="document_valid_passport">Căn cước có hiệu lực</string>
+    <string name="document_invalid_passport">Căn cước không có hiệu lực</string>
+    <string name="document_document_failure">Thông tin tài liệu trong căn cước không hợp lệ</string>
+    <string name="document_csca_failure">Thông tin CSCA không hợp lệ</string>
+    <string name="document_unknown_passport_message">Không thể xác thực căn cước</string>
+    <string name="document_unknown_passport_title">Căn cước không xác định</string>
+    <string name="document_content_success">Nội dung thẻ căn cước hợp lệ</string>
+
+    <string name="label_authentication">Authentication</string>
+    <string name="label_authentication_bac">BAC</string>
+    <string name="label_authentication_pace">PACE</string>
+    <string name="label_authentication_chip">Chip</string>
+    <string name="label_authentication_passive">Passive</string>
+    <string name="label_authentication_active">Active</string>
+    <string name="label_authentication_eac">EAC</string>
+    <string name="label_authentication_document_signing">Document Signing</string>
+    <string name="label_authentication_country_signing">CSCA</string>
+
+    <!--    CP06 authenticate-->
+    <string name="auth_ok">Đã được xác thực bởi Bộ Công An</string>
+    <string name="not_enough">Tài khoản hết quota</string>
+    <string name="account_is_not_active">Tài khoản bị khóa</string>
+    <string name="wrong_account">User hoặc password không đúng</string>
+    <string name="system_error">Lỗi hệ thống</string>
+    <string name="wrong_parameter">Sai tham số</string>
+    <string name="id_card_not_found">IdCard không hợp lệ</string>
+    <string name="device_not_found">Thiết bị không đúng hoặc bị khóa</string>
+    <string name="method_not_support">Giao thức không được hỗ trợ</string>
+    <string name="unknown">An unknown error</string>
+    <string name="error_auth">Có lỗi trong quá trình xác thực</string>
+</resources>

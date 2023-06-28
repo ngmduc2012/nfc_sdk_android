@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFBB33"
+        android:contentDescription="@string/app_name"
+        android:scaleType="center"
+        android:src="@drawable/header_logo" />
+
+    <EditText
+        android:id="@+id/documentNumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/ic_number_card"
+        android:drawablePadding="12dp"
+        android:hint="Số cccd"
+        android:inputType="text|number"
+        android:maxLength="12"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/dateOfBirt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/custom_input"
+        android:drawableLeft="@drawable/ic_time"
+        android:drawablePadding="12dp"
+        android:fontFamily="sans-serif"
+        android:hint="Ngày sinh"
+        android:inputType="text|number"
+        android:textSize="14sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/exprityDate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_input"
+            android:drawableLeft="@drawable/ic_time"
+            android:drawablePadding="12dp"
+            android:enabled="true"
+            android:fontFamily="sans-serif"
+            android:hint="Ngày hết hạn"
+            android:inputType="text|number"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="Vô Thời Hạn" />
+
+            <CheckBox
+                android:id="@+id/check_unlimited"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_no"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_bright"
+            android:clickable="true"
+            android:text="Hủy"
+            android:textColor="#403D3D" />
+
+        <Button
+            android:id="@+id/btn_yes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_bright"
+            android:clickable="true"
+            android:text="Scan Card"
+            android:textColor="#403D3D" />
+    </LinearLayout>
+</LinearLayout>

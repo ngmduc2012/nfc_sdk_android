@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_warning"
+            style="@style/CardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
+            app:cardBackgroundColor="@color/teal_700"
+            app:contentPadding="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_small">
+
+                <ImageView
+                    android:id="@+id/iconWarning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_passport"
+                    android:tint="@color/white"
+                    tools:ignore="UseAppTint" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textWarningTitle"
+                        style="@style/Text.SubHead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_marginBottom="@dimen/margin_small"
+                        android:layout_toRightOf="@+id/iconWarning"
+                        android:text="unknow"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textWarningMessage"
+                        style="@style/Text.Body3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textWarningTitle"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:layout_toRightOf="@+id/iconWarning"
+                        android:text="unknow"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_authentication"
+            style="@style/CardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardElevation="3dp"
+            app:contentPadding="4dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:stretchColumns="1">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small">
+
+                        <TextView
+                            android:id="@+id/label_authentication"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="@dimen/margin_tiny"
+                            android:text="@string/label_authentication"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+
+                <TableRow
+                    android:id="@+id/row_bac"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_bac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_bac"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_bac"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_pace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_pace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_pace"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_pace"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/row_passive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_passive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_passive"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_passive"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_active"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_active"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_active"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_active"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_document_signing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_document_signing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_document_signing"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_document_signing"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_country_signing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_country_signing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_country_signing"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_country_signing"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_chip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_chip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_chip"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_chip"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row_eac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small">
+
+                    <TextView
+                        android:id="@+id/label_eac"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:padding="@dimen/margin_tiny"
+                        android:text="@string/label_authentication_eac"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/value_eac"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_tiny"
+                        android:src="@drawable/ic_close_circle_outline"
+                        android:tint="@android:color/holo_red_light"
+                        tools:ignore="UseAppTint" />
+
+                </TableRow>
+
+            </TableLayout>
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_line" />
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            style="@style/CardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?android:selectableItemBackground"
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardElevation="3dp"
+            app:contentPadding="4dp">
+
+            <ImageView
+                android:id="@+id/view_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:src="@drawable/photo"
+                android:visibility="visible" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:selectableItemBackground"
+                app:cardCornerRadius="@dimen/cardview_default_radius"
+                app:cardElevation="3dp"
+                app:contentPadding="4dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:stretchColumns="1">
+
+                    <TableRow
+                        android:id="@+id/row_passport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_personal_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_personal_name"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_personal_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_cccd_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_cccd_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_CCCD_Number"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_cccd_number"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_date_of_birth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_date_of_birth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_dob"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_date_of_birth"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_sex"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_sex"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_sex"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_nationality"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_nationality"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_nationality"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_nation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin"
+                        android:textColor="@color/black"
+                        android:textStyle="bold">
+
+                        <TextView
+                            android:id="@+id/label_nation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_nation"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_nation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_religion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_religion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_religion"
+                            android:textColor="@color/black"
+
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_religion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_district"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_district"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_district"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_district"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_permanent_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_permanent_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_permanent_address"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_permanent_address"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_identifying_characteristics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_identifying_characteristics"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_identifying_characteristics"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_identifying_characteristics"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_dateRange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_dateRange"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_dateRange"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_dateRange"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_date_expiration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_date_expiration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_date_expiration"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_date_expiration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_father_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_father_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_father_name"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_father_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_mother_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_mother_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_mother_name"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_mother_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_husband_an_wife_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_husband_an_wife_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_husband_an_wife_name"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_husband_an_wife_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/color_line" />
+
+                    <TableRow
+                        android:id="@+id/row_CMND_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_CMND_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="@dimen/margin_medium"
+                            android:gravity="end"
+                            android:text="@string/label_additional_information_CMND_number"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/value_CMND_number"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:maxLines="2"
+                            android:text="@string/label_not_available"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+                </TableLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+

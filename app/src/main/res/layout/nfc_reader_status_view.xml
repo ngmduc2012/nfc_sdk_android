@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardReader"
+        style="@style/CardViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:foreground="?android:selectableItemBackground"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="3dp"
+        app:contentPadding="4dp">
+
+        <TextView
+            android:id="@+id/textHeaderReadCard"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/header_read_card"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#000"
+            android:textSize="14sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardReading"
+        style="@style/CardViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:foreground="?android:selectableItemBackground"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="3dp">
+
+        <TextView
+            android:id="@+id/textHeaderReadingCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/header_reading_card"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#000"
+            android:textSize="14sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cccd_mat_truoc"
+        style="@style/CardViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_weight="15"
+        android:elevation="8dp"
+        android:foreground="?android:selectableItemBackground"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/front_img" />
+    </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/indicator"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewNfcTitle"
+        android:layout_alignLeft="@+id/textViewNfcTitle"
+        android:layout_alignRight="@+id/textViewNfcTitle"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingVertical="20dp"
+        android:text="Đang đọc thông tin..."
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:visibility="gone" />
+</LinearLayout>

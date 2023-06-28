@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="30dp"
+    android:orientation="vertical">
+
+    <cist.cmc.nfc.sdk.demo.views.NFCScrollView
+        android:id="@+id/scrollInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="visible">
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            style="@style/CardViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginTop="@dimen/layout_marginTop"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:layout_marginBottom="@dimen/layout_marginBottom"
+            android:foreground="?android:selectableItemBackground"
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardElevation="3dp"
+            app:contentPadding="4dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:stretchColumns="1">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:paddingLeft="@dimen/margin_tiny"
+                        android:paddingTop="@dimen/card_margin"
+                        android:paddingRight="@dimen/margin_tiny"
+                        android:paddingBottom="@dimen/card_margin">
+
+                        <TextView
+                            android:id="@+id/label_personal_documents"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/label_passport"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    </TableRow>
+                </TableLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_passport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_personal_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_personal_name" />
+
+                    <TextView
+                        android:id="@+id/value_personal_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_cccd_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_cccd_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_additional_information_CCCD_Number" />
+
+                    <TextView
+                        android:id="@+id/value_cccd_number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_date_of_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_date_of_birth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_additional_information_dob" />
+
+                    <TextView
+                        android:id="@+id/value_date_of_birth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_additional_information_sex" />
+
+                    <TextView
+                        android:id="@+id/value_sex"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_district"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_additional_information_district" />
+
+                    <TextView
+                        android:id="@+id/value_district"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_dateRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_dateRange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_additional_information_dateRange" />
+
+                    <TextView
+                        android:id="@+id/valueDateOfIssue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_date_expiration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_date_expiration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_additional_information_date_expiration" />
+
+                    <TextView
+                        android:id="@+id/value_date_expiration"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_line" />
+
+                <TableRow
+                    android:id="@+id/row_CMND_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingTop="@dimen/card_margin"
+                    android:paddingRight="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/card_margin">
+
+                    <TextView
+                        android:id="@+id/label_CMND_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:gravity="end"
+                        android:text="@string/label_additional_information_CMND_number" />
+
+                    <TextView
+                        android:id="@+id/value_CMND_number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="@string/label_not_available"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+            </TableLayout>
+        </androidx.cardview.widget.CardView>
+    </cist.cmc.nfc.sdk.demo.views.NFCScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/btn_read"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/extended_fab_content_desc"
+        android:text="@string/extended_fab_label"
+        android:textColor="@color/color_text_botton"
+        app:backgroundTint="@color/status_text"
+        app:icon="@drawable/ic_nfc"
+        app:iconTint="@color/color_text_botton"
+        app:rippleColor="@color/purple_500" />
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#00BCD4</color>
+<!--    <color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorAccent">#8BC34A</color>
+
+    <color name="grey_mid">#616365</color>
+
+    <color name="colorTextOnSecondary">#000000</color>
+    <color name="colorTextOnPrimary">#ffffff</color>
+<!--    <color name="colorTextOnTertiary">#413392</color>-->
+    <color name="grey_2">#1f000000</color>
+    <color name="blue_light">#e6e8ee</color>
+    <color name="toogle_text_color">#2A3764</color>
+
+    <color name="viewfinder_corners">#ffffffff</color> <!-- four corner elements for viewfinder -->
+    <color name="viewfinder_frame">#ffd6d6d6</color> <!-- viewfinder rectangle -->
+    <color name="viewfinder_mask">#60000000</color>  <!-- viewfinder exterior darkened area -->
+    <color name="status_text">#ffffffff
+    </color> <!-- status_view_top/status_view_bottom text color -->
+    <color name="color_text_botton">#ED686666</color>
+    <color name="color_line">#EDCDCDCD</color>
+
+    <color name="color_success">#FF8BC34A</color>
+    <color name="color_failed">#F44336</color>
+    <color name="color_not_present">#EDF6CACA</color>
+    <color name="color_not_check">#EDD1B9B9</color>
+    <color name="color_not_unknown">#EDAAAAAA</color>
+    <color name="color_not_cases">#ED6E6E6E</color>
+</resources>
