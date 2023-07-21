@@ -61,8 +61,8 @@ dependencies {
 
     implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.64'
     implementation 'net.sf.scuba:scuba-sc-android:0.0.23'
-    implementation project(path: ':core')
-    //implementation files("libs/core-release.aar")
+    //implementation project(path: ':core')
+    implementation files("libs/core-release.aar")
 
     //api service
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

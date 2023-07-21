@@ -1,7 +1,9 @@
 package cist.cmc.nfc.sdk.core.models.cp06_auth;
 
-import com.google.gson.annotations.SerializedName;
+import androidx.annotation.Keep;
 
+import com.google.gson.annotations.SerializedName;
+@Keep
 public class CP06Response {
     @SerializedName("Result")
     private Result result;

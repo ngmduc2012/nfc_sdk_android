@@ -5,5 +5,5 @@ import cist.cmc.nfc.sdk.core.models.EDocument;
 public interface IdCardInfoPresenter {
     void onDestroyView();
 
-    void onUpdateView(EDocument model);
+    void onUpdateView(EDocument model,String documentNumberFull);
 }

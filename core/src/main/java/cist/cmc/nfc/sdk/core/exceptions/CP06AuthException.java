@@ -1,7 +1,9 @@
 package cist.cmc.nfc.sdk.core.exceptions;
 
+import androidx.annotation.Keep;
 import androidx.annotation.Nullable;
 
+@Keep
 public class CP06AuthException extends Exception {
     private String message;
 

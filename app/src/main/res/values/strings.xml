@@ -85,7 +85,7 @@
     <string name="label_authentication_country_signing">CSCA</string>
 
     <!--    CP06 authenticate-->
-    <string name="auth_ok">Đã được xác thực bởi Bộ Công An</string>
+    <string name="auth_ok">Xác thực bởi Cục Cảnh Sát quản lý hành chính về trật tự xã hội</string>
     <string name="not_enough">Tài khoản hết quota</string>
     <string name="account_is_not_active">Tài khoản bị khóa</string>
     <string name="wrong_account">User hoặc password không đúng</string>

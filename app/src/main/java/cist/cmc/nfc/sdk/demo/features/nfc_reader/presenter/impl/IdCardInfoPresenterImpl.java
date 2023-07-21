@@ -1,24 +1,36 @@
 package cist.cmc.nfc.sdk.demo.features.nfc_reader.presenter.impl;
 
+import static android.app.PendingIntent.getActivity;
+
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import cist.cmc.nfc.sdk.core.models.EDocument;
 import cist.cmc.nfc.sdk.core.models.OptionPersonal;
+import cist.cmc.nfc.sdk.core.models.cp06_auth.CP06Request;
 import cist.cmc.nfc.sdk.core.nfc.extend.FeatureStatus;
 import cist.cmc.nfc.sdk.core.nfc.extend.VerificationStatus;
 import cist.cmc.nfc.sdk.demo.R;
+import cist.cmc.nfc.sdk.demo.features.cp06_authendicate.CP06AuthListner;
 import cist.cmc.nfc.sdk.demo.features.nfc_reader.presenter.IdCardInfoPresenter;
+import cist.cmc.nfc.sdk.demo.views.CustomDialog;
 
-public class IdCardInfoPresenterImpl implements IdCardInfoPresenter {
+public class IdCardInfoPresenterImpl implements IdCardInfoPresenter, CP06AuthListner {
+    private FragmentManager manager;
+    private String TAG = IdCardInfoPresenterImpl.class.getSimpleName();
     public View view;
     private ImageView ivPhoto;
     private TextView valuePersonalName;
@@ -55,8 +67,16 @@ public class IdCardInfoPresenterImpl implements IdCardInfoPresenter {
     private ImageView value_chip;
     private ImageView value_eac;
 
-    public IdCardInfoPresenterImpl(View view) {
+    private TextView txtCP06Auth;
+    private ImageView iconCP06Auth;
+    private LinearLayout cardCP06Auth;
+
+    public IdCardInfoPresenterImpl(View view, FragmentManager manager) {
         this.view = view;
+        this.manager = manager;
+        cardCP06Auth = view.findViewById(R.id.cardCP06Auth);
+        txtCP06Auth = view.findViewById(R.id.txt_cp06_auth);
+        iconCP06Auth = view.findViewById(R.id.icon_cp06_auth);
         ivPhoto = view.findViewById(R.id.view_photo);
         valueCCCDNumber = view.findViewById(R.id.value_cccd_number);
         valuePersonalName = view.findViewById(R.id.value_personal_name);
@@ -100,9 +120,12 @@ public class IdCardInfoPresenterImpl implements IdCardInfoPresenter {
     }
 
     @Override
-    public void onUpdateView(EDocument document) {
+    public void onUpdateView(EDocument document, String documentNumberFull) {
         view.setVisibility(View.VISIBLE);
         refreshData(document);
+        CP06Request cp06Request = new CP06Request("R58R344F7ML", documentNumberFull, "Ba Đình, Hà Nội", "LTC", "LTC@1234aAcokyvina*!@#", document.getSercurityFile().getDsCert());
+        CustomDialog dialog = new CustomDialog(cp06Request, this);
+        dialog.show(manager, "showPopup");
     }
 
     private void refreshData(EDocument document) {
@@ -277,5 +300,29 @@ public class IdCardInfoPresenterImpl implements IdCardInfoPresenter {
 
         imageView.setImageResource(resourceIconId);
         imageView.setColorFilter(ContextCompat.getColor(view.getContext(), resourceColorId));
+    }
+
+    @Override
+    public void authSuccess(boolean isAuth, int message) {
+        Log.d(TAG, "Is Auth: " + isAuth + ", Message: " + message);
+        cardCP06Auth.setVisibility(View.VISIBLE);
+        if (isAuth) {
+            txtCP06Auth.setText(message);
+            iconCP06Auth.setImageResource(R.drawable.auth_success);
+        } else {
+            txtCP06Auth.setText(message);
+            txtCP06Auth.setTextColor(Color.parseColor("#F44336"));
+            iconCP06Auth.setImageResource(R.drawable.auth_error);
+        }
+    }
+
+    @Override
+    public void authError(boolean isAuth, int message) {
+        Log.e(TAG, "Is Auth: " + isAuth + ", Message: " + message);
+        cardCP06Auth.setVisibility(View.VISIBLE);
+        txtCP06Auth.setText(message);
+        txtCP06Auth.setTextColor(Color.parseColor("#F44336"));
+        iconCP06Auth.setImageResource(R.drawable.auth_error);
+
     }
 }

@@ -46,12 +46,13 @@ public class CustomDialog extends DialogFragment {
 
     private CP06Request cp06Request;
     private CP06AuthListner listner;
-    private TextView txtTitle;
-    private TextView txtMessage;
-    private TextView btnOk;
+    private TextView txtStatus;
+    //    private TextView txtTitle;
+//    private TextView txtMessage;
+//    private TextView btnOk;
     private Thread authThread;
     private LinearLayout loadingAuth;
-    private LinearLayout loadingSuccess;
+    //    private LinearLayout loadingSuccess;
     private final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
 
     @Nullable
@@ -65,16 +66,11 @@ public class CustomDialog extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadingAuth = view.findViewById(R.id.loading_auth);
-        loadingSuccess = view.findViewById(R.id.loading_success);
-        txtTitle = view.findViewById(R.id.txt_title);
-        txtMessage = view.findViewById(R.id.txt_message);
-        btnOk = view.findViewById(R.id.btn_ok);
-        btnOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
+        txtStatus = view.findViewById(R.id.txt_status);
+//        loadingSuccess = view.findViewById(R.id.loading_success);
+//        txtTitle = view.findViewById(R.id.txt_title);
+//        txtMessage = view.findViewById(R.id.txt_message);
+//        btnOk = view.findViewById(R.id.btn_ok);
     }
 
     @Override
@@ -93,27 +89,30 @@ public class CustomDialog extends DialogFragment {
             public void onResponse(Call<List<CP06Response>> call, Response<List<CP06Response>> response) {
                 List<CP06Response> cp06ResponseList = response.body();
                 int message = processMess(cp06ResponseList.get(0).getResult().getCode(), listner);
-                mainThreadHandler.post(new Runnable() {
+                mainThreadHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        loadingAuth.setVisibility(View.GONE);
-                        loadingSuccess.setVisibility(View.VISIBLE);
-                        txtMessage.setText(message);
+                        txtStatus.setText("Hoàn Thành");
+                        dismiss();
+                        //   loadingAuth.setVisibility(View.GONE);
+//                        loadingSuccess.setVisibility(View.VISIBLE);
+//                        txtMessage.setText(message);
                     }
-                });
+                }, 1000);
             }
 
             @Override
             public void onFailure(Call<List<CP06Response>> call, Throwable t) {
-                mainThreadHandler.post(new Runnable() {
+                mainThreadHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         listner.authError(false, R.string.error_auth);
-                        loadingAuth.setVisibility(View.GONE);
-                        loadingSuccess.setVisibility(View.VISIBLE);
-                        txtMessage.setText(R.string.error_auth);
+                        dismiss();
+//                        loadingAuth.setVisibility(View.GONE);
+//                        loadingSuccess.setVisibility(View.VISIBLE);
+//                        txtMessage.setText(R.string.error_auth);
                     }
-                });
+                }, 1000);
             }
         });
     }

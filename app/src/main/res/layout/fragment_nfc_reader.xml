@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,64 +8,55 @@
     android:orientation="vertical"
     tools:context=".features.nfc_reader.NfcReaderFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_cp06_auth"
-        style="@style/CardViewStyle"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:foreground="?android:selectableItemBackground"
-        android:visibility="gone"
-        app:cardBackgroundColor="@color/teal_700"
-        app:contentPadding="4dp">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@drawable/logo_cong_an_non_bg" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="BỘ CÔNG AN"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/nfcReaderStatus"
+            layout="@layout/nfc_reader_status_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="@dimen/margin_small">
+            android:layout_marginHorizontal="10dp"
+            android:visibility="visible" />
 
-            <TextView
-                android:id="@+id/txt_cp06_auth"
-                style="@style/Text.SubHead"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:layout_toRightOf="@+id/iconWarning"
-                android:layout_weight="8"
-                android:text="@string/unknown"
-                android:textColor="@color/white" />
+        <include
+            android:id="@+id/idCardView"
+            layout="@layout/id_card_info_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/icon_cp06_auth"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_weight="2"
-                android:src="@drawable/id_card"
-                tools:ignore="UseAppTint" />
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <include
-        android:id="@+id/nfcReaderStatus"
-        layout="@layout/nfc_reader_status_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="10dp"
-        android:visibility="visible" />
-
-    <include
-        android:id="@+id/idCardView"
-        layout="@layout/id_card_info_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
-
-</LinearLayout>
+</RelativeLayout>

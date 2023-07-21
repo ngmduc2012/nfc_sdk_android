@@ -139,7 +139,7 @@ public class MrzScannerGuideFragment extends BaseFragment implements EasyImage.E
                                 Toast.makeText(getContext(), "complete", Toast.LENGTH_SHORT).show();
                             }
                         });
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         Toast.makeText(getContext(), "Có lỗi trong quá trình trích xuất", Toast.LENGTH_SHORT).show();
                         // throw new RuntimeException(e);
                     }

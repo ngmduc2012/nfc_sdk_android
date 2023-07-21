@@ -7,14 +7,17 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +39,7 @@ import cist.cmc.nfc.sdk.demo.views.CustomDialog;
 import retrofit2.Retrofit;
 
 
-public class NfcReaderFragment extends Fragment implements INfcReaderCallback, CP06AuthListner {
+public class NfcReaderFragment extends Fragment implements INfcReaderCallback {
     private String TAG = NfcReaderFragment.class.getSimpleName();
     private static final String DOCUMENT_NUMBER = "DOCUMENT_NUMBER";
     private static final String BIRTH_DATE = "BIRTH_DATE";
@@ -50,9 +53,6 @@ public class NfcReaderFragment extends Fragment implements INfcReaderCallback, C
     private String documentNumberFull;
     private String canNumber;
     private final IdCardReader cardReader = new IdCardReader();
-    private TextView txtCP06Auth;
-    private ImageView iconCP06Auth;
-    private CardView cardCP06Auth;
 
     private View idCardView;
     private IdCardInfoPresenter idCardInfoPresenter;
@@ -99,10 +99,7 @@ public class NfcReaderFragment extends Fragment implements INfcReaderCallback, C
 
     @Override
     public void onSuccess(EDocument document) {
-        idCardInfoPresenter.onUpdateView(document);
-        CP06Request cp06Request = new CP06Request("R58R344F7ML", documentNumberFull, "Ba Đình, Hà Nội", "LTC", "LTC@1234aAcokyvina*!@#", document.getSercurityFile().getDsCert());
-        CustomDialog dialog = new CustomDialog(cp06Request, this);
-        dialog.show(getActivity().getSupportFragmentManager(), "showPopup");
+        idCardInfoPresenter.onUpdateView(document, documentNumberFull);
     }
 
     public static NfcReaderFragment newInstance(String documentNumber,
@@ -122,6 +119,7 @@ public class NfcReaderFragment extends Fragment implements INfcReaderCallback, C
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         if (getArguments() != null) {
             documentNumber = getArguments().getString(DOCUMENT_NUMBER);
             birthDate = getArguments().getString(BIRTH_DATE);
@@ -134,9 +132,6 @@ public class NfcReaderFragment extends Fragment implements INfcReaderCallback, C
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        cardCP06Auth = view.findViewById(R.id.card_cp06_auth);
-        txtCP06Auth = view.findViewById(R.id.txt_cp06_auth);
-        iconCP06Auth = view.findViewById(R.id.icon_cp06_auth);
         setUpView(view);
     }
 
@@ -144,34 +139,13 @@ public class NfcReaderFragment extends Fragment implements INfcReaderCallback, C
         nfcReaderStatusView = view.findViewById(R.id.nfcReaderStatus);
         idCardView = view.findViewById(R.id.idCardView);
         nfcReaderPresenter = new NfcReaderPresenterImpl(nfcReaderStatusView);
-        idCardInfoPresenter = new IdCardInfoPresenterImpl(idCardView);
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        idCardInfoPresenter = new IdCardInfoPresenterImpl(idCardView, manager);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_nfc_reader, container, false);
-    }
-
-    @Override
-    public void authSuccess(boolean isAuth, int message) {
-        Log.d(TAG, "Is Auth: " + isAuth + ", Message: " + message);
-        cardCP06Auth.setVisibility(View.VISIBLE);
-        txtCP06Auth.setText(message);
-        if (isAuth) {
-            iconCP06Auth.setImageResource(R.drawable.auth_success_non_bg);
-
-        } else {
-            iconCP06Auth.setImageResource(R.drawable.auth_error_non_bg);
-        }
-    }
-
-    @Override
-    public void authError(boolean isAuth, int message) {
-        Log.e(TAG, "Is Auth: " + isAuth + ", Message: " + message);
-        cardCP06Auth.setVisibility(View.VISIBLE);
-        txtCP06Auth.setText(message);
-        iconCP06Auth.setImageResource(R.drawable.auth_error_non_bg);
-
     }
 }
